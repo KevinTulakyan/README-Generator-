@@ -1,5 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const fs = require('fs');
+const generateMarkdown = require('generateMarkdown')
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -18,7 +20,7 @@ const questions = [
     {
         type: 'input',
         name: 'repo',
-        message: 'What is the name of your GitHub repo?',
+        message: 'Enter your GitHub repo name.',
         validate: githubRepo => {
             if (githubRepo) {
               return true;
@@ -76,28 +78,49 @@ const questions = [
         message: 'Provide any tests written for your application and eexplain how to run them.'
     },
     {
-        type: 'checkbox',
+        type: 'list',
         name: 'license',
         message: 'Choose a license for your project.',
         choices: [
-        'GNU AGPLv3', 
-        'GNU GPLv3', 
-        'GNU LGPLv3', 
+        'Apache License 2.0',
+        'Boost Software License 1.0',
+        'GNU AGPL v3', 
+        'GNU GPL v3', 
+        'GNU LGPL v3',
+        'GNU FDLv 1.3',
+        'ISC',
         'Mozilla Public License 2.0', 
-        'Apache License 2.0', 
         'MIT License', 
-        'Boost Software License 1.0', 
-        'The Unlicense'
+        'N/a'
         ]
-    }
+    } 
 ];
 
 
 
 // TODO: Create a function to write README file
+const writeFile = fileContent => {
+    return new Promise((resolve, reject) => {
+      fs.writeFile('./README.md', fileContent, err => {
+        if (err) {
+          reject(err);
+          return;
+        }
 
+        resolve({
+          ok: true,
+          message: 'File created!'
+        });
+      });
+    });
+}
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    return inquirer.prompt(
+        questions
+    )
+
+}
 
 // Function call to initialize app
 init();
