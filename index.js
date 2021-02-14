@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('generateMarkdown')
+const generateMarkdown = require('./utils/generateMarkdown')
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -93,25 +93,24 @@ const questions = [
         'MIT License', 
         'N/a'
         ]
-    } 
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Enter your Email contact in case of questions.'
+    }
 ];
 
 
 
 // TODO: Create a function to write README file
-const writeFile = fileContent => {
-    return new Promise((resolve, reject) => {
-      fs.writeFile('./README.md', fileContent, err => {
+const writeToFile = (readME, data) => {
+    fs.writeFile(readME, data, err => {
         if (err) {
-          reject(err);
-          return;
+            console.log(err)
+            return;
         }
-
-        resolve({
-          ok: true,
-          message: 'File created!'
-        });
-      });
+        console.log('file created')
     });
 }
 // TODO: Create a function to initialize app
@@ -119,8 +118,14 @@ function init() {
     return inquirer.prompt(
         questions
     )
-
 }
 
 // Function call to initialize app
-init();
+init()
+    .then(data => {
+    return generateMarkdown(data);
+    })
+    .then(generateMarkdown => {
+    return writeToFile('./dist/README.md', generateMarkdown);
+    })
+
