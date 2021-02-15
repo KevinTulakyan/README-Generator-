@@ -4,7 +4,7 @@
 
 
 # Description
-A program tool that makes writing README files easy and quick. Takes in user input and then displays it in a static format. The sample README that was made in the video is in the folder called dist.
+A program tool that makes writing README files easy and quick. Takes in user input and then displays it in a static format. The sample README that was made in the video is in the folder called dist, click here https://github.com/KevinTulakyan/README-Generator-/tree/main/dist .
 
 # Deployed Page
 https://kevintulakyan.github.io/README-Generator-/
