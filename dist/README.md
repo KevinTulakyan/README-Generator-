@@ -1,12 +1,12 @@
 
-# Test
+# Read me Tool
 
 
   [![License](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 
-# Descrition
-Testing the project\
+# Description
+Help you make read me files. 
 
 
 ## Table of Contents
@@ -20,13 +20,13 @@ Testing the project\
 
 
 ## Github Link
-Repo name
+Read me maker
   
 ## Installation
-Install npm
+May need to install npm.
   
 ## Usage
-Run in console
+Use when trying to make a readme file.
   
 
   ## License
@@ -34,12 +34,12 @@ Run in console
   
   
 ## Contribution
-undefined
+Offer ways to help make readme better.
   
 ## Tests
-none
+Run in node.
   
 ## Questions
 Kevin
 
-Kevintulakyan  
+KevinTulakyan@email.com  

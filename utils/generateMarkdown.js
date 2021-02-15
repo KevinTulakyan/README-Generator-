@@ -132,7 +132,7 @@ module.exports = generateMarkdown => {
 
 ${BadgeCheck(license)}
 
-# Descrition
+# Description
 ${data.description}
 
 ${displayTableOfContents(license)}
