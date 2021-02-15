@@ -1,5 +1,5 @@
 
-# Read me Tool (ONE CRATED IN VIDEO AS A TEST)
+# Read me Tool (Sample README)
 
 
   [![License](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
